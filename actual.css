@@ -18,6 +18,7 @@
   /* Text */
   --tn-fg: #c0caf5;
   --tn-fg-dark: #a9b1d6;
+  --tn-fg-subdued: #9aa5ce;  /* from the original VS Code theme; dark5 is too dim for text on cards */
   --tn-dark5: #737aa2;
   --tn-comment: #565f89;
 
@@ -37,6 +38,7 @@
   /* Overlays */
   --tn-blue-muted: rgba(122, 162, 247, 0.16);
   --tn-blue-strong: rgba(122, 162, 247, 0.24);
+  --tn-red-muted: rgba(247, 118, 142, 0.16);
   --tn-fg-muted: rgba(192, 202, 245, 0.08);
   --tn-fg-hover: rgba(192, 202, 245, 0.14);
   --tn-shadow: rgba(0, 0, 0, 0.5);
@@ -50,7 +52,7 @@
   --color-pageBackgroundLineBottom: var(--tn-magenta);
   --color-pageText: var(--tn-fg);
   --color-pageTextLight: var(--tn-fg-dark);
-  --color-pageTextSubdued: var(--tn-dark5);
+  --color-pageTextSubdued: var(--tn-fg-subdued);
   --color-pageTextDark: var(--tn-fg);
   --color-pageTextPositive: var(--tn-blue);
   --color-pageTextLink: var(--tn-blue);
@@ -66,9 +68,9 @@
   --color-tableText: var(--tn-fg);
   --color-tableTextItemAdded: var(--color-tableText);
   --color-tableTextLight: var(--tn-fg-dark);
-  --color-tableTextSubdued: var(--tn-dark5);
+  --color-tableTextSubdued: var(--tn-fg-subdued);
   --color-tableTextSelected: var(--tn-fg);
-  --color-tableTextInactive: var(--tn-comment);
+  --color-tableTextInactive: var(--tn-dark5);
   --color-tableHeaderText: var(--tn-fg-dark);
   --color-tableHeaderBackground: var(--tn-bg-highlight);
   --color-tableBorder: var(--tn-gutter);
@@ -82,7 +84,7 @@
 
   --color-numberPositive: var(--tn-green);
   --color-numberNegative: var(--tn-red);
-  --color-numberNeutral: var(--tn-dark5);
+  --color-numberNeutral: var(--tn-fg-subdued);
   --color-budgetNumberNegative: var(--color-numberNegative);
   --color-budgetNumberZero: var(--color-tableTextSubdued);
   --color-budgetNumberNeutral: var(--color-tableText);
@@ -104,11 +106,25 @@
   --color-sidebarItemTextSelected: var(--tn-blue);
   --color-sidebarBudgetName: var(--tn-fg-dark);
   --color-sidebarHeaderText: var(--tn-fg);
-  --color-sidebarTextSubdued: var(--tn-dark5);
-  --color-sidebarTextMuted: var(--tn-comment);
+  --color-sidebarTextSubdued: var(--tn-fg-subdued);
+  --color-sidebarTextMuted: var(--tn-dark5);
+  --color-sidebarTextPositive: var(--color-sidebarItemBackgroundPositive);
+  --color-sidebarTextFailed: var(--color-sidebarItemBackgroundFailed);
+  --color-sidebarBackgroundFailedSubtle: var(--tn-red-muted);
+  --color-sidebarItemBackgroundSelected: var(--tn-blue-muted);
+  --color-sidebarBorder: var(--color-sidebarItemBackgroundHover);
+  --color-sidebarControlBackground: var(--color-sidebarItemBackgroundHover);
+  --color-sidebarBrand: var(--color-sidebarItemAccentSelected);
 
-  --color-settingsCardTextSubdued: var(--tn-dark5);
+  --color-settingsCardBackground: var(--color-tableBackground);
+  --color-settingsCardBorder: var(--color-tableBorder);
+  --color-settingsCardText: var(--color-tableText);
+  --color-settingsCardTextSubdued: var(--tn-fg-subdued);
+  --color-settingsNavItemText: var(--color-pageText);
+  --color-settingsNavItemBackgroundHover: var(--tn-fg-muted);
   --color-settingsNavItemAccentSelected: var(--tn-blue);
+  --color-settingsNavItemTextSelected: var(--tn-blue);
+  --color-settingsNavItemBackgroundSelected: var(--tn-blue-muted);
 
   --color-menuBackground: var(--tn-bg-highlight);
   --color-menuItemBackgroundHover: var(--tn-gutter);
@@ -117,7 +133,7 @@
   --color-menuItemTextSelected: var(--tn-blue);
   --color-menuItemTextHeader: var(--tn-magenta);
   --color-menuBorder: var(--tn-gutter);
-  --color-menuKeybindingText: var(--tn-comment);
+  --color-menuKeybindingText: var(--tn-dark5);
   --color-menuAutoCompleteBackground: var(--tn-bg-dark);
   --color-menuAutoCompleteBackgroundHover: var(--tn-gutter);
   --color-menuAutoCompleteText: var(--tn-fg);
@@ -130,14 +146,14 @@
   --color-modalBorder: var(--tn-gutter);
   --color-mobileHeaderBackground: var(--tn-bg-dark);
   --color-mobileHeaderText: var(--tn-blue);
-  --color-mobileHeaderTextSubdued: var(--tn-dark5);
+  --color-mobileHeaderTextSubdued: var(--tn-fg-subdued);
   --color-mobileHeaderTextHover: var(--tn-fg-hover);
   --color-mobilePageBackground: var(--tn-bg);
   --color-mobileNavBackground: var(--tn-bg-dark);
   --color-mobileNavItem: var(--tn-fg-dark);
   --color-mobileNavItemSelected: var(--tn-blue);
   --color-mobileAccountText: var(--tn-cyan);
-  --color-mobileTransactionSelected: var(--tn-blue0);
+  --color-mobileTransactionSelected: var(--tn-blue7);
   --color-mobileViewTheme: var(--color-mobileHeaderBackground);
   --color-mobileConfigServerViewTheme: var(--tn-blue);
 
@@ -162,7 +178,7 @@
   --color-buttonPrimaryBackgroundHover: var(--tn-cyan);
   --color-buttonPrimaryBorder: var(--color-buttonPrimaryBackground);
   --color-buttonPrimaryShadow: var(--tn-shadow);
-  --color-buttonPrimaryDisabledText: var(--tn-comment);
+  --color-buttonPrimaryDisabledText: var(--tn-fg-subdued);
   --color-buttonPrimaryDisabledBackground: var(--tn-gutter);
   --color-buttonPrimaryDisabledBorder: var(--color-buttonPrimaryDisabledBackground);
 
@@ -174,15 +190,15 @@
   --color-buttonNormalShadow: var(--tn-shadow);
   --color-buttonNormalSelectedText: var(--tn-bg-dark);
   --color-buttonNormalSelectedBackground: var(--tn-blue);
-  --color-buttonNormalDisabledText: var(--tn-comment);
+  --color-buttonNormalDisabledText: var(--tn-dark5);
   --color-buttonNormalDisabledBackground: var(--tn-bg);
   --color-buttonNormalDisabledBorder: var(--tn-gutter);
 
   --color-calendarText: var(--tn-fg);
   --color-calendarBackground: var(--tn-bg-highlight);
   --color-calendarItemText: var(--tn-fg);
-  --color-calendarItemBackground: var(--tn-gutter);
-  --color-calendarSelectedBackground: var(--color-buttonNormalSelectedBackground);
+  --color-calendarItemBackground: var(--tn-bg);
+  --color-calendarSelectedBackground: var(--tn-blue7);
   --color-calendarCellBackground: var(--tn-bg);
   --color-datePickerRangeBackground: var(--tn-blue7);
 
@@ -218,37 +234,37 @@
   --color-formLabelBackground: var(--tn-bg-highlight);
   --color-formInputBackground: var(--tn-bg-dark);
   --color-formInputBackgroundSelected: var(--tn-bg-dark);
-  --color-formInputBackgroundSelection: var(--tn-blue0);
+  --color-formInputBackgroundSelection: var(--tn-blue7);
   --color-formInputBorder: var(--tn-gutter);
   --color-formInputTextReadOnlySelection: var(--tn-bg-highlight);
   --color-formInputBorderSelected: var(--tn-blue);
   --color-formInputText: var(--tn-fg);
-  --color-formInputTextPlaceholder: var(--tn-comment);
-  --color-formInputTextPlaceholderSelected: var(--tn-dark5);
+  --color-formInputTextPlaceholder: var(--tn-dark5);
+  --color-formInputTextPlaceholderSelected: var(--tn-fg-subdued);
   --color-formInputShadowSelected: var(--tn-blue0);
   --color-formInputTextHighlight: var(--tn-blue);
-  --color-checkboxText: var(--color-tableText);
-  --color-checkboxBackgroundSelected: var(--tn-blue);
+  --color-checkboxText: var(--tn-fg);
+  --color-checkboxBackgroundSelected: var(--tn-blue0);
   --color-checkboxBorderSelected: var(--tn-blue);
   --color-checkboxShadowSelected: var(--tn-blue0);
   --color-checkboxToggleBackground: var(--tn-terminal-black);
   --color-checkboxToggleBackgroundSelected: var(--tn-blue);
   --color-checkboxToggleDisabled: var(--tn-gutter);
 
-  --color-pillBackground: var(--tn-gutter);
+  --color-pillBackground: var(--tn-bg-highlight);
   --color-pillBackgroundLight: var(--tn-bg-highlight);
   --color-pillText: var(--tn-fg);
   --color-pillTextHighlighted: var(--tn-blue);
   --color-pillBorder: var(--tn-gutter);
   --color-pillBorderDark: var(--color-pillBorder);
-  --color-pillBackgroundSelected: var(--tn-blue0);
+  --color-pillBackgroundSelected: var(--tn-blue7);
   --color-pillTextSelected: var(--tn-fg);
   --color-pillBorderSelected: var(--tn-blue);
 
   --color-reportsRed: var(--tn-red);
   --color-reportsBlue: var(--tn-blue);
   --color-reportsGreen: var(--tn-green);
-  --color-reportsGray: var(--tn-dark5);
+  --color-reportsGray: var(--tn-fg-subdued);
   --color-reportsLabel: var(--color-pageText);
   --color-reportsInnerLabel: var(--tn-bg);
   --color-reportsNumberPositive: var(--color-numberPositive);
