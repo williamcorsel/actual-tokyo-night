@@ -1,0 +1,287 @@
+/* Tokyo Night for Actual Budget: https://github.com/williamcorsel/actual-tokyo-night
+   Colour values come from the Night style of the tokyonight.nvim palette by
+   Folke Lemaitre (https://github.com/folke/tokyonight.nvim, Apache License 2.0):
+   lua/tokyonight/colors/storm.lua and night.lua.
+   Mapping from palette name to Actual: page = bg, cards and tables = bg_highlight,
+   sidebar and inputs = bg_dark, main colour = blue, accent = magenta,
+   dividers = fg_gutter. The --tn-* variables hold the palette; every
+   --color-* variable points to one of them. */
+
+:root {
+  /* Backgrounds, darkest to lightest */
+  --tn-bg-dark: #16161e;      /* bg_dark: sidebar, inputs */
+  --tn-bg: #1a1b26;           /* bg: page */
+  --tn-bg-highlight: #292e42; /* bg_highlight: cards, tables, menus */
+  --tn-gutter: #3b4261;       /* fg_gutter: dividers, borders */
+  --tn-terminal-black: #414868;
+
+  /* Text */
+  --tn-fg: #c0caf5;
+  --tn-fg-dark: #a9b1d6;
+  --tn-dark5: #737aa2;
+  --tn-comment: #565f89;
+
+  /* Accents */
+  --tn-blue: #7aa2f7;
+  --tn-blue0: #3d59a1;
+  --tn-blue7: #394b70;
+  --tn-cyan: #7dcfff;
+  --tn-teal: #73daca;
+  --tn-green: #9ece6a;
+  --tn-magenta: #bb9af7;
+  --tn-purple: #9d7cd8;
+  --tn-red: #f7768e;
+  --tn-orange: #ff9e64;
+  --tn-yellow: #e0af68;
+
+  /* Overlays */
+  --tn-blue-muted: rgba(122, 162, 247, 0.16);
+  --tn-blue-strong: rgba(122, 162, 247, 0.24);
+  --tn-fg-muted: rgba(192, 202, 245, 0.08);
+  --tn-fg-hover: rgba(192, 202, 245, 0.14);
+  --tn-shadow: rgba(0, 0, 0, 0.5);
+  --tn-overlay: rgba(22, 22, 30, 0.6);
+
+  --color-pageBackground: var(--tn-bg);
+  --color-pageBackgroundTopLeft: var(--tn-bg);
+  --color-pageBackgroundBottomRight: var(--tn-bg-dark);
+  --color-pageBackgroundLineTop: var(--tn-blue);
+  --color-pageBackgroundLineMid: var(--tn-bg);
+  --color-pageBackgroundLineBottom: var(--tn-magenta);
+  --color-pageText: var(--tn-fg);
+  --color-pageTextLight: var(--tn-fg-dark);
+  --color-pageTextSubdued: var(--tn-dark5);
+  --color-pageTextDark: var(--tn-fg);
+  --color-pageTextPositive: var(--tn-blue);
+  --color-pageTextLink: var(--tn-blue);
+  --color-pageTextLinkLight: var(--tn-cyan);
+
+  --color-cardBackground: var(--tn-bg-highlight);
+  --color-cardBorder: var(--tn-gutter);
+  --color-cardShadow: var(--tn-shadow);
+
+  --color-tableBackground: var(--tn-bg-highlight);
+  --color-tableRowBackgroundAlternate: var(--color-tableBackground);
+  --color-tableRowBackgroundHover: var(--tn-fg-muted);
+  --color-tableText: var(--tn-fg);
+  --color-tableTextItemAdded: var(--color-tableText);
+  --color-tableTextLight: var(--tn-fg-dark);
+  --color-tableTextSubdued: var(--tn-dark5);
+  --color-tableTextSelected: var(--tn-fg);
+  --color-tableTextInactive: var(--tn-comment);
+  --color-tableHeaderText: var(--tn-fg-dark);
+  --color-tableHeaderBackground: var(--tn-bg-highlight);
+  --color-tableBorder: var(--tn-gutter);
+  --color-tableBorderSelected: var(--tn-blue);
+  --color-tableBorderHover: var(--tn-cyan);
+  --color-tableBorderSeparator: var(--tn-comment);
+  --color-tableRowBackgroundHighlight: var(--tn-blue7);
+  --color-tableRowBackgroundHighlightText: var(--tn-fg);
+  --color-tableRowHeaderBackground: var(--tn-bg-highlight);
+  --color-tableRowHeaderText: var(--tn-fg);
+
+  --color-numberPositive: var(--tn-green);
+  --color-numberNegative: var(--tn-red);
+  --color-numberNeutral: var(--tn-dark5);
+  --color-budgetNumberNegative: var(--color-numberNegative);
+  --color-budgetNumberZero: var(--color-tableTextSubdued);
+  --color-budgetNumberNeutral: var(--color-tableText);
+  --color-budgetNumberPositive: var(--color-budgetNumberNeutral);
+  --color-templateNumberFunded: var(--color-numberPositive);
+  --color-templateNumberUnderFunded: var(--tn-yellow);
+  --color-toBudgetPositive: var(--color-numberPositive);
+  --color-toBudgetZero: var(--color-numberPositive);
+  --color-toBudgetNegative: var(--color-budgetNumberNegative);
+
+  --color-sidebarBackground: var(--tn-bg-dark);
+  --color-sidebarItemBackgroundPending: var(--tn-orange);
+  --color-sidebarItemBackgroundPositive: var(--tn-green);
+  --color-sidebarItemBackgroundFailed: var(--tn-red);
+  --color-sidebarItemAccentSelected: var(--tn-blue);
+  --color-sidebarItemBackgroundHover: var(--tn-fg-muted);
+  --color-sidebarItemText: var(--tn-fg-dark);
+  --color-sidebarItemTextUpdated: var(--color-sidebarItemText);
+  --color-sidebarItemTextSelected: var(--tn-blue);
+  --color-sidebarBudgetName: var(--tn-fg-dark);
+  --color-sidebarHeaderText: var(--tn-fg);
+  --color-sidebarTextSubdued: var(--tn-dark5);
+  --color-sidebarTextMuted: var(--tn-comment);
+
+  --color-settingsCardTextSubdued: var(--tn-dark5);
+  --color-settingsNavItemAccentSelected: var(--tn-blue);
+
+  --color-menuBackground: var(--tn-bg-highlight);
+  --color-menuItemBackgroundHover: var(--tn-gutter);
+  --color-menuItemText: var(--tn-fg);
+  --color-menuItemTextHover: var(--tn-fg);
+  --color-menuItemTextSelected: var(--tn-blue);
+  --color-menuItemTextHeader: var(--tn-magenta);
+  --color-menuBorder: var(--tn-gutter);
+  --color-menuKeybindingText: var(--tn-comment);
+  --color-menuAutoCompleteBackground: var(--tn-bg-dark);
+  --color-menuAutoCompleteBackgroundHover: var(--tn-gutter);
+  --color-menuAutoCompleteText: var(--tn-fg);
+  --color-menuAutoCompleteTextHover: var(--tn-cyan);
+  --color-menuAutoCompleteTextHeader: var(--tn-magenta);
+  --color-menuAutoCompleteItemTextHover: var(--tn-fg);
+  --color-menuAutoCompleteItemText: var(--color-menuItemText);
+
+  --color-modalBackground: var(--tn-bg-highlight);
+  --color-modalBorder: var(--tn-gutter);
+  --color-mobileHeaderBackground: var(--tn-bg-dark);
+  --color-mobileHeaderText: var(--tn-blue);
+  --color-mobileHeaderTextSubdued: var(--tn-dark5);
+  --color-mobileHeaderTextHover: var(--tn-fg-hover);
+  --color-mobilePageBackground: var(--tn-bg);
+  --color-mobileNavBackground: var(--tn-bg-dark);
+  --color-mobileNavItem: var(--tn-fg-dark);
+  --color-mobileNavItemSelected: var(--tn-blue);
+  --color-mobileAccountText: var(--tn-cyan);
+  --color-mobileTransactionSelected: var(--tn-blue0);
+  --color-mobileViewTheme: var(--color-mobileHeaderBackground);
+  --color-mobileConfigServerViewTheme: var(--tn-blue);
+
+  --color-markdownNormal: var(--tn-magenta);
+  --color-markdownDark: var(--tn-blue);
+  --color-markdownLight: var(--tn-cyan);
+
+  --color-buttonMenuText: var(--tn-fg);
+  --color-buttonMenuTextHover: var(--color-buttonMenuText);
+  --color-buttonMenuBackground: transparent;
+  --color-buttonMenuBackgroundHover: var(--tn-fg-hover);
+  --color-buttonMenuBorder: var(--tn-comment);
+  --color-buttonMenuSelectedText: var(--tn-fg);
+  --color-buttonMenuSelectedTextHover: var(--tn-fg);
+  --color-buttonMenuSelectedBackground: var(--tn-blue-muted);
+  --color-buttonMenuSelectedBackgroundHover: var(--tn-blue-strong);
+  --color-buttonMenuSelectedBorder: var(--color-buttonMenuSelectedBackground);
+
+  --color-buttonPrimaryText: var(--tn-bg-dark);
+  --color-buttonPrimaryTextHover: var(--color-buttonPrimaryText);
+  --color-buttonPrimaryBackground: var(--tn-blue);
+  --color-buttonPrimaryBackgroundHover: var(--tn-cyan);
+  --color-buttonPrimaryBorder: var(--color-buttonPrimaryBackground);
+  --color-buttonPrimaryShadow: var(--tn-shadow);
+  --color-buttonPrimaryDisabledText: var(--tn-comment);
+  --color-buttonPrimaryDisabledBackground: var(--tn-gutter);
+  --color-buttonPrimaryDisabledBorder: var(--color-buttonPrimaryDisabledBackground);
+
+  --color-buttonNormalText: var(--tn-fg);
+  --color-buttonNormalTextHover: var(--tn-fg);
+  --color-buttonNormalBackground: var(--tn-bg-highlight);
+  --color-buttonNormalBackgroundHover: var(--tn-gutter);
+  --color-buttonNormalBorder: var(--tn-gutter);
+  --color-buttonNormalShadow: var(--tn-shadow);
+  --color-buttonNormalSelectedText: var(--tn-bg-dark);
+  --color-buttonNormalSelectedBackground: var(--tn-blue);
+  --color-buttonNormalDisabledText: var(--tn-comment);
+  --color-buttonNormalDisabledBackground: var(--tn-bg);
+  --color-buttonNormalDisabledBorder: var(--tn-gutter);
+
+  --color-calendarText: var(--tn-fg);
+  --color-calendarBackground: var(--tn-bg-highlight);
+  --color-calendarItemText: var(--tn-fg);
+  --color-calendarItemBackground: var(--tn-gutter);
+  --color-calendarSelectedBackground: var(--color-buttonNormalSelectedBackground);
+  --color-calendarCellBackground: var(--tn-bg);
+  --color-datePickerRangeBackground: var(--tn-blue7);
+
+  --color-buttonBareText: var(--color-pageText);
+  --color-buttonBareTextHover: var(--color-pageText);
+  --color-buttonBareDisabledText: var(--color-pageTextSubdued);
+  --color-buttonBareBackground: transparent;
+  --color-buttonBareDisabledBackground: var(--color-buttonBareBackground);
+  --color-buttonBareBackgroundHover: var(--tn-fg-muted);
+  --color-buttonBareBackgroundActive: var(--tn-fg-hover);
+
+  --color-noticeBackground: var(--tn-bg-highlight);
+  --color-noticeBackgroundLight: var(--tn-gutter);
+  --color-noticeText: var(--tn-green);
+  --color-noticeTextLight: var(--tn-green);
+  --color-noticeTextDark: var(--tn-fg);
+  --color-noticeTextMenu: var(--tn-green);
+  --color-noticeBorder: var(--tn-green);
+  --color-warningBackground: var(--tn-bg-highlight);
+  --color-warningText: var(--tn-orange);
+  --color-warningTextDark: var(--tn-orange);
+  --color-warningBorder: var(--tn-orange);
+  --color-errorBackground: var(--tn-bg-highlight);
+  --color-errorText: var(--tn-red);
+  --color-errorTextDark: var(--tn-red);
+  --color-errorTextDarker: var(--tn-red);
+  --color-errorTextMenu: var(--tn-red);
+  --color-errorBorder: var(--tn-red);
+  --color-upcomingBackground: var(--tn-bg-highlight);
+  --color-upcomingText: var(--tn-magenta);
+
+  --color-formLabelText: var(--tn-blue);
+  --color-formLabelBackground: var(--tn-bg-highlight);
+  --color-formInputBackground: var(--tn-bg-dark);
+  --color-formInputBackgroundSelected: var(--tn-bg-dark);
+  --color-formInputBackgroundSelection: var(--tn-blue0);
+  --color-formInputBorder: var(--tn-gutter);
+  --color-formInputTextReadOnlySelection: var(--tn-bg-highlight);
+  --color-formInputBorderSelected: var(--tn-blue);
+  --color-formInputText: var(--tn-fg);
+  --color-formInputTextPlaceholder: var(--tn-comment);
+  --color-formInputTextPlaceholderSelected: var(--tn-dark5);
+  --color-formInputShadowSelected: var(--tn-blue0);
+  --color-formInputTextHighlight: var(--tn-blue);
+  --color-checkboxText: var(--color-tableText);
+  --color-checkboxBackgroundSelected: var(--tn-blue);
+  --color-checkboxBorderSelected: var(--tn-blue);
+  --color-checkboxShadowSelected: var(--tn-blue0);
+  --color-checkboxToggleBackground: var(--tn-terminal-black);
+  --color-checkboxToggleBackgroundSelected: var(--tn-blue);
+  --color-checkboxToggleDisabled: var(--tn-gutter);
+
+  --color-pillBackground: var(--tn-gutter);
+  --color-pillBackgroundLight: var(--tn-bg-highlight);
+  --color-pillText: var(--tn-fg);
+  --color-pillTextHighlighted: var(--tn-blue);
+  --color-pillBorder: var(--tn-gutter);
+  --color-pillBorderDark: var(--color-pillBorder);
+  --color-pillBackgroundSelected: var(--tn-blue0);
+  --color-pillTextSelected: var(--tn-fg);
+  --color-pillBorderSelected: var(--tn-blue);
+
+  --color-reportsRed: var(--tn-red);
+  --color-reportsBlue: var(--tn-blue);
+  --color-reportsGreen: var(--tn-green);
+  --color-reportsGray: var(--tn-dark5);
+  --color-reportsLabel: var(--color-pageText);
+  --color-reportsInnerLabel: var(--tn-bg);
+  --color-reportsNumberPositive: var(--color-numberPositive);
+  --color-reportsNumberNegative: var(--color-numberNegative);
+  --color-reportsNumberNeutral: var(--color-numberNeutral);
+  --color-reportsChartFill: var(--color-reportsNumberPositive);
+
+  --color-noteTagBackground: var(--tn-gutter);
+  --color-noteTagBackgroundHover: var(--tn-terminal-black);
+  --color-noteTagText: var(--tn-fg);
+
+  --color-budgetOtherMonth: var(--tn-bg);
+  --color-budgetCurrentMonth: var(--color-tableBackground);
+  --color-budgetHeaderOtherMonth: var(--tn-bg-dark);
+  --color-budgetHeaderCurrentMonth: var(--color-tableHeaderBackground);
+
+  --color-floatingActionBarBackground: var(--tn-bg-highlight);
+  --color-floatingActionBarBorder: var(--tn-blue);
+  --color-floatingActionBarText: var(--tn-fg);
+
+  --color-tooltipText: var(--tn-fg);
+  --color-tooltipBackground: var(--tn-bg-highlight);
+  --color-tooltipBorder: var(--tn-gutter);
+
+  --color-overlayBackground: var(--tn-overlay);
+
+  --color-chartQual1: var(--tn-blue);
+  --color-chartQual2: var(--tn-magenta);
+  --color-chartQual3: var(--tn-green);
+  --color-chartQual4: var(--tn-cyan);
+  --color-chartQual5: var(--tn-orange);
+  --color-chartQual6: var(--tn-yellow);
+  --color-chartQual7: var(--tn-red);
+  --color-chartQual8: var(--tn-teal);
+  --color-chartQual9: var(--tn-purple);
+}
